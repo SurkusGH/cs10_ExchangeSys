@@ -5,7 +5,7 @@ namespace cs10_paskaita_ExchangeSys
 {
     class Program
     {
-        public static List<string> Currency = new List<string> { "USD", "PLN", "BYR" };
+        public static List<string> Currency = new List<string> { "USD", "PLN", "BYR" }; // <-- Globalūs kintamieji
         public static List<decimal> Value = new List<decimal> { 0.88m, 0.22m, 0.35m };
         static void Main(string[] args)
 
@@ -33,20 +33,20 @@ namespace cs10_paskaita_ExchangeSys
                 {
                     case 1:
                         Console.WriteLine("[1] EUR -> USD parinktis priimta.");
-                        Parinktis(input, index);
+                        Pointer (input, index);
                         break;
                     case 2:
                         Console.WriteLine("[2] EUR -> PLN parinktis priimta.");
-                        Parinktis(input, index);
+                        Pointer (input, index);
                         break;
                     case 3:
                         Console.WriteLine("[3] EUR -> BYR parinktis priimta.");
-                        Parinktis(input, index);
+                        Pointer (input, index);
                         break;
                 }
             }
         }
-        public static void Parinktis(decimal input, int index)
+        public static void Pointer (decimal input, int index)
         {
             Console.WriteLine($"Konvertuojame {input}EUR į {Currency[index - 1]} kursu 1EUR = {Value[index - 1]}{Currency[index - 1]}");
             Console.WriteLine($"*Grąžinama suma {Math.Round(input / Value[index - 1]),2}{Currency[index - 1]}*");
